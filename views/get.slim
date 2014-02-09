@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title pastebin
+    link type='text/css' href='/css/paste.css' rel='stylesheet'
+    link type='text/css' href='/css/prettyprint/solarized.css' rel='stylesheet'
+    script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'
+    script src='/script/prettify/run_prettify.js'
+
+  body
+    pre class='prettyprint linenums'
+      = @paste

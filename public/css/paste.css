@@ -1,0 +1,45 @@
+body {
+  background: #002b36;
+  padding:    0;
+  margin:     0;
+}
+
+textarea {
+  width:       90%;
+  height:      90%;
+  overflow:    auto;
+  border:      0;
+  padding:     0;
+  outline:     none;
+  resize:      none;
+  font-family: monospace;
+  font-size:   16px;
+  position:    absolute; 
+  top:         2em;
+  right:       2em;
+  bottom:      2em;
+  left:        4em;
+}
+
+@-moz-document url-prefix() {
+  textarea {
+    width:     90%;
+    height:    90%;
+  }
+}
+
+pre {
+  font-family: monospace;
+  font-size:   16px;
+  position:    absolute;
+  top:         1em;
+  right:       2em;
+  bottom:      2em;
+  left:        1.5em;
+}
+
+/*
+::-webkit-scrollbar {
+  opacity: 0
+}
+*/

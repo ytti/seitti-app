@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title UpFile
+    link type='text/css' href='/css/up_file.css' rel='stylesheet'
+    script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'
+    script src='/script/up_file.js'
+
+  body
+    p class='msg'
+      = @msg 
+    form id='upload' name='upload' method='post' action='/' enctype='multipart/form-data'
+      input id='file' class='box'    type='file' name='file' class='prettyprint'

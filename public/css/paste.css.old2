@@ -1,0 +1,43 @@
+body {
+  background: #002b36;
+  padding:    0;
+  margin:     0;
+}
+
+textarea {
+  width:       100%;
+  height:      100%;
+  border:      0; 
+  padding:     0 0;
+  position:    fixed;
+  outline:     none;
+  resize:      none;
+  font-family: monospace;
+  font-size:   16px;
+  position:    absolute;
+  top:         2em;
+  right:       2em;
+  bottom:      2em;
+  left:        2em;
+}
+
+@-moz-document url-prefix() {
+  textarea {
+    height: -2em;
+  }
+}
+
+pre {
+  font-family: monospace;
+  font-size:   16px;
+  position:    absolute;
+  top:         1em;
+  right:       2em;
+  bottom:      2em;
+  left:        -0.5em;
+}
+
+::-webkit-scrollbar {
+  /* this just triggers some bug which causes desired outcome, i.e. no scrollbar put pgup/pgdown work  */
+  opacity: 0
+}
