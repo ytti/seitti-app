@@ -11,7 +11,7 @@ class App < Seitti
   end
 
   post '/' do
-    id = Seitti.get_id params[:paste]
+    id = get_id params[:paste]
     entry = Paste[:paste_id=>id] || Paste.new(:paste_id=>id)
     entry.time  = Time.now.utc
     entry.paste = params[:paste]

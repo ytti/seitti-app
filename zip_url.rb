@@ -10,7 +10,7 @@ class App < Seitti
   end
 
   post '/' do
-    id = Seitti.get_id params[:url]
+    id = get_id params[:url]
     entry = ZipURL[:url_id=>id] || ZipURL.new(:url_id=>id)
     entry.time = Time.now.utc
     entry.url  = params[:url]
