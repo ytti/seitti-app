@@ -18,7 +18,7 @@ class Seitti < Sinatra::Base
   end
 
   def e404 dir=settings.public_folder
-    Dir.entries(File.join(dir, '404'))[2..-1].shuffle.first
+    Dir.entries(File.join(dir, '404'))[2..-1].select{|e|e[0..0]!='.'}.shuffle.first
   end
 
   def self.db file
