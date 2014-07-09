@@ -6,7 +6,8 @@ class App < Seitti
 
   get '/:id' do
     pass unless (entry = ZipURL[:url_id=>params[:id]])
-    redirect entry.url
+    uri = URI(entry.url).scheme ? entry.url : 'http://' + entry.url
+    redirect uri
   end
 
   post '/' do
