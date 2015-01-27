@@ -1,13 +1,33 @@
 module Lab
 class App < Seitti
+  set connections: []
   require 'json'
   require 'pp'
+
+  Thread.new do
+    loop do
+      settings.connections.each { |conn| conn << "poop\n\n" }
+      sleep 1
+    end
+  end
+
+  get '/virta', provides: 'text/event-stream' do
+    response.headers['X-Accel-Buffering'] = 'no'
+    stream :keep_open do |conn|
+      settings.connections << conn
+      sleep 10
+      conn.callback { settings.connections.delete conn }
+    end
+  end
+
   get'/' do
     content_type :text
   end
+
   get '/req.?:format?' do
     params[:format]
   end
+
   post '/commit' do
     content_type :json
     #k = JSON.load params['commits']

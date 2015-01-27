@@ -1,0 +1,13 @@
+%head
+  %title Webluuna
+  %link{:rel => 'stylesheet', :href => '/css/webluuna.css' }
+  %script{:src => 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js' }
+  %script{:src => '/script/webluuna.js' }
+  %form{:id => 'input', :action => '/submit', :method => 'get'}
+    %label{:for => 'file'}
+      Device
+    %select{:id => 'devices', :name => 'file'}
+      -@devices.each do |name, file|
+        %option{:value=>"#{file}"} #{name}
+    %input{:id=>'submit', :type=>'submit', :value=>'submit', :class=>'off'}
+    %label{:for => 'submit'}
